@@ -3,12 +3,12 @@ import MenuCard from "../components/MenuCard";
 import Footer from "../components/Footer";
 
 const menuItems = [
-  { id: 1, name: "Shio Ramen", price: 10.5 },
-  { id: 2, name: "Shoyu Ramen", price: 10.0 },
-  { id: 3, name: "Miso Ramen", price: 8.5 },
-  { id: 4, name: "Kara-Miso Ramen", price: 9.5 },
-  { id: 5, name: "California Roll", price: 7.5 },
-  { id: 6, name: "Pressed Unagi Sushi", price: 8.5 },
+  { id: 1, name: "Sisig", price: 99 },
+  { id: 2, name: "Fried Chicken", price: 99 },
+  { id: 3, name: "Corn Soup", price: 50 },
+  { id: 4, name: "Halo-halo", price: 89 },
+  { id: 5, name: "Chaofan", price: 120 },
+  { id: 6, name: "Tonkatsu", price: 99 },
 ];
 
 function Home({ addToCart }) {

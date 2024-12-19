@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import OrderSummary from "./components/OrderSummary";
@@ -29,6 +29,13 @@ function App() {
     });
   };
 
+  // Function to delete an item from the cart by ID
+  const deleteItem = (id) => {
+    setCartItems((prevCart) =>
+      prevCart.filter((cartItem) => cartItem.id !== id)
+    );
+  };
+
   return (
     <div className="flex flex-col h-screen">
       {/* Render the IntroPage or the Home page */}
@@ -43,7 +50,8 @@ function App() {
           <div className="flex flex-1 overflow-hidden">
             <Navigation />
             <Home addToCart={addToCart} />
-            <OrderSummary cartItems={cartItems} />
+            {/* Pass deleteItem as a prop to OrderSummary */}
+            <OrderSummary cartItems={cartItems} onDeleteItem={deleteItem} />
           </div>
 
           {/* Footer */}

@@ -32,14 +32,14 @@ function IntroPage({ onNavigate }) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white">
-      {/* Header */}
+    <div className="flex flex-col min-h-screen bg-[url('../../public/images/photos/bgblack.jpg')] bg-cover bg-center text-white">
+      {/* {</* Header */}
       <Header />
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center relative overflow-hidden">
+      <div className="flex-1 flex items-center justify-center h-screen relative">
         {/* Sliding Images Container */}
-        <div className="relative w-full h-full">
+        <div className="relative w-[80%] h-[450px] mx-auto border-2 border-gray-700 overflow-hidden rounded-lg mt-10">
           <div
             className="absolute inset-0 flex transition-transform duration-[1500ms] ease-in-out"
             style={{
@@ -60,7 +60,7 @@ function IntroPage({ onNavigate }) {
         {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 bg-transparent border-black border-2 px-0 py-0 rounded-full hover:bg-[#d94e1e] transition"
+          className="absolute left-20 bg-transparent border-black px-0 py-0 rounded-full hover:bg-[#d94e1e] transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ function IntroPage({ onNavigate }) {
         {/* Next Button */}
         <button
           onClick={goToNext}
-          className="absolute right-4 bg-transparent border-black border-2 px-0 py-0 rounded-full hover:bg-[#d94e1e] transition"
+          className="absolute right-20 bg-transparent border-black rounded-full hover:bg-[#d94e1e] transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ function IntroPage({ onNavigate }) {
       </div>
 
       {/* Tap to Order Button */}
-      <div className="flex justify-center my-6">
+      <div className="flex justify-center -mt-3">
         <button
           onClick={onNavigate}
           className="bg-[#EF5C28] text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-[#d94e1e] transition"
@@ -112,8 +112,6 @@ function IntroPage({ onNavigate }) {
 
       {/* Footer Section */}
       <div className="flex-none mt-4">
-        {" "}
-        {/* Footer section will now be treated as a non-flexible section */}
         <Footer />
       </div>
     </div>
