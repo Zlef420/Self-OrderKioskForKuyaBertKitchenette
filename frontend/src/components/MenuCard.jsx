@@ -1,6 +1,6 @@
 function MenuCard({ name, price, onAddToCart }) {
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4 text-center">
+    <div className="bg-yellow-50 rounded-lg shadow-md hover:shadow-lg transition p-4 text-center">
       <img
         src="https://via.placeholder.com/150"
         alt={name}
