@@ -1,17 +1,17 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import OrderSummary from "./components/OrderSummary";
 import Home from "./pages/Home";
-import IntroPage from "./pages/IntroPage"; // Import the advertising intro page
-import Footer from "./components/Footer"; // Import Footer component
+import IntroPage from "./pages/IntroPage";
+import Footer from "./components/Footer";
+import ReviewOrder from "./pages/ReviewOrder";
+import CashierScreen from "./pages/CashierScreen";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true); // Show Intro first
-  const [cartItems, setCartItems] = useState([]); // Cart items state
-
-  // Function to navigate to the Home page
-  const navigateToHome = () => setShowIntro(false);
+  const [cartItems, setCartItems] = useState([]); // State to manage items in the cart
 
   // Function to add an item to the cart
   const addToCart = (item) => {
@@ -29,7 +29,7 @@ function App() {
     });
   };
 
-  // Function to delete an item from the cart by ID
+  // Function to delete an item from the cart by its ID
   const deleteItem = (id) => {
     setCartItems((prevCart) =>
       prevCart.filter((cartItem) => cartItem.id !== id)
@@ -37,28 +37,35 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* Render the IntroPage or the Home page */}
-      {showIntro ? (
-        <IntroPage onNavigate={navigateToHome} />
-      ) : (
-        <>
-          {/* Header */}
-          <Header />
-
-          {/* Main Content */}
-          <div className="flex flex-1 overflow-hidden">
-            <Navigation />
-            <Home addToCart={addToCart} />
-            {/* Pass deleteItem as a prop to OrderSummary */}
-            <OrderSummary cartItems={cartItems} onDeleteItem={deleteItem} />
-          </div>
-
-          {/* Footer */}
-          <Footer />
-        </>
-      )}
-    </div>
+    <Router>
+      <div className="flex flex-col h-screen">
+        <Routes>
+          {/* Route for IntroPage */}
+          <Route path="/" element={<IntroPage />} />
+          <Route path="/review-order" element={<ReviewOrder />} />
+          <Route path="/cashier-screen" element={<CashierScreen />} />
+          <Route path="/admin-page" element={<AdminPage />} />
+          {/* Route for Home and other components */}
+          <Route
+            path="/home"
+            element={
+              <>
+                <Header />
+                <div className="flex flex-1 overflow-hidden">
+                  <Navigation />
+                  <Home addToCart={addToCart} />
+                  <OrderSummary
+                    cartItems={cartItems}
+                    onDeleteItem={deleteItem}
+                  />
+                </div>
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

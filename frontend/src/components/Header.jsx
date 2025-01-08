@@ -1,7 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 function Header() {
+  const navigate = useNavigate();
   return (
     <header className="bg-customOrange text-white px-4 py-3 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
-      <h1 className="pl-5 font-bold text-lg">Kuya Bert</h1>
+      <h1
+        className="pl-5 font-bold text-lg cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        Kuya Bert
+      </h1>
       <div>
         <button className="mr-2 hover:text-gray-300 flex items-center">
           <svg
