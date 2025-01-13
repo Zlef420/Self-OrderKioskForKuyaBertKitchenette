@@ -17,7 +17,7 @@ function Navigation() {
   ];
 
   return (
-    <nav className="w-1/6 bg-gray-800 text-white pt-16 -mt-1.5">
+    <nav className="w-1/6 bg-gray-800 text-white pt-1.5">
       <ul className="space-y-2 p-0">
         {menuItems.map((item) => (
           <li

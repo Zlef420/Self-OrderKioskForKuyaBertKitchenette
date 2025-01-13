@@ -36,7 +36,7 @@ function IntroPage() {
     <div className="flex flex-col min-h-screen bg-[url('../../public/images/photos/bgblack.jpg')] bg-cover bg-center text-white">
       <Header />
       <div className="flex-1 flex items-center justify-center h-screen relative">
-        <div className="relative w-[80%] h-[450px] mx-auto border-2 border-gray-700 overflow-hidden rounded-lg mt-10">
+        <div className="relative w-[80%] h-[450px] mx-auto border-2 border-gray-700 overflow-hidden rounded-lg -mt-4">
           <div
             className="absolute inset-0 flex transition-transform duration-[1500ms] ease-in-out"
             style={{

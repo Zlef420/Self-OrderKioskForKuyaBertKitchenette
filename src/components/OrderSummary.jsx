@@ -11,7 +11,7 @@ function OrderSummary({ cartItems, orderNumber, onDeleteItem }) {
   );
 
   return (
-    <div className="w-1/5 bg-gray-900 text-white pt-14 px-4 flex flex-col h-full">
+    <div className="w-1/5 bg-gray-900 text-white px-4 flex flex-col h-full">
       {/* Order Header */}
       <div className="mb-4">
         <h2 className="text-lg font-bold text-center">Order #{orderNumber}</h2>
